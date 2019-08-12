@@ -1,7 +1,8 @@
 # GAN_mapping_relationship
 
-This is the implementation of [our paper](https://arxiv.org/abs/1804.00316). In this paper, we proposed an unsupervised phoneme recogntion system which can achieve 33.1% phoneme error rate on TIMIT.
-This method developed a GAN-based model to achieve unsupervised phoneme recognition and we further use a set of HMMs to work in harmony with the GAN.
+This is the implementation of [our paper](https://arxiv.org/abs/1804.00316). 
+In this paper, we proposed an unsupervised phoneme recogntion system which can achieve 33.1% phoneme accuracy on TIMIT with oracle phoneme boundaries.
+This method developed a GAN-based model to achieve unsupervised phoneme recognition.
 
 ## How to use
 
@@ -18,10 +19,10 @@ This method developed a GAN-based model to achieve unsupervised phoneme recognit
 - Usage:
 
 1. Modify `path.sh` with your path of Kaldi and srilm.
-2. Modify `config.sh` with your code path and timit path.
+2. Modify `config.sh` with your feature path and timit path.
 3. Run `$ bash preprocess.sh`
 
-- This script will extract features and split dataset into train/test set.
+- Phoneme sequences can download from [here](https://www.dropbox.com/s/rux7tnr0n6k6n33/phn_seq.tar.gz?dl=0), and put `target.39` and `oracle.39` in `./data`.
 
 ### Train model
 - Usage:
@@ -33,9 +34,9 @@ This method developed a GAN-based model to achieve unsupervised phoneme recognit
 - This scipt contains the training flow of whole system.
 
 ## Hyperparameters in `config.sh`
-`cluster_num` : type of initial phoneme boundaries (orc/uns).
+`cluster_num` : number of cluster.
 
-`target_type` : type of initial phoneme boundaries (orc/uns).
+`target_type` : type of phoneme sequences (oracle/fake).
 
 ## Reference
 [Completely Unsupervised Phoneme Recognition by Adversarially Learning Mapping Relationships from Audio Embeddings](https://arxiv.org/abs/1804.00316),  Da-Rong Liu, Kuan-Yu Chen *et.al.*
