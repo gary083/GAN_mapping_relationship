@@ -21,7 +21,7 @@ generator_lr=0.01
 discriminator_lr=0.001
 max_length=120
 batch_size=128
-step=10000
+step=4000
 discriminator_hidden_units=256
 discriminator_iterations=3
 cuda_id=0
@@ -30,8 +30,9 @@ cuda_id=0
 save_dir="${save_path}/matching_network"
 result_file="${save_path}/result.txt"
 
-cd matching_network
-CUDA_VISIBLE_DEVICES="$cuda_id" python3 main.py --mode $mode \
+cd src/matching_network
+# Training
+CUDA_VISIBLE_DEVICES="$cuda_id" python3 main.py --mode 'train' \
 --generator_lr $generator_lr --discriminator_lr $discriminator_lr \
 --max_length $max_length --batch_size $batch_size --step $step \
 --discriminator_hidden_units $discriminator_hidden_units \
@@ -41,4 +42,12 @@ CUDA_VISIBLE_DEVICES="$cuda_id" python3 main.py --mode $mode \
 --test_idx $test_idx --test_audio2vec $test_audio2vec --test_oracle $test_oracle \
 --mapping $mapping --target $target 
 
-cd ..
+# Testing
+CUDA_VISIBLE_DEVICES="$cuda_id" python3 main.py --mode 'test' \
+--max_length $max_length --batch_size $batch_size \
+--discriminator_hidden_units $discriminator_hidden_units \
+--result_file $result_file --save_dir $save_dir \
+--train_idx $train_idx --train_audio2vec $train_audio2vec --train_oracle $train_oracle \
+--test_idx $test_idx --test_audio2vec $test_audio2vec --test_oracle $test_oracle \
+--mapping $mapping 
+cd ../..

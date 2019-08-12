@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Data path and overall setting
-. ./config.sh
+# . ./config.sh
 
 mode='train' 
 
@@ -19,7 +19,8 @@ cuda_id=0
 log="${save_path}/audio2vec/log.txt"
 save_dir="${save_path}/audio2vec"
 
-cd audio2vec
+
+cd src/audio2vec
 CUDA_VISIBLE_DEVICES="$cuda_id" python3 main.py --mode $mode \
 --lr $lr --max_length $max_length \
 --hidden_units $hidden_units --batch_size $batch_size \
@@ -27,4 +28,4 @@ CUDA_VISIBLE_DEVICES="$cuda_id" python3 main.py --mode $mode \
 --kl_saturate $kl_saturate --kl_step $kl_step \
 --train_feat $train_feat --test_feat $test_feat --train_phn $train_phn --test_phn $test_phn \
 --meta $meta --cluster_num $cluster_num
-cd ..
+cd ../..

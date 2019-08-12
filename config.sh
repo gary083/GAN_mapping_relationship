@@ -7,8 +7,7 @@ export target_type=oracle #oracle/fake
 # PATH
 export root_path=/home/guanyu/guanyu/interspeech2018/handoff
 export data_path=${root_path}/data
-# export save_path=${root_path}/save/${target_type}_${cluster_num}
-export save_path=${root_path}/data
+export save_path=${root_path}/save/${target_type}_${cluster_num}
 
 # TIMIT 
 export timit_path=/home/guanyu/guanyu/timit/timit_feature
