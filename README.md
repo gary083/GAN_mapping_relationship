@@ -16,7 +16,7 @@ This method developed a GAN-based model to achieve unsupervised phoneme recognit
 ### Data preprocess
 - Usage:
 
-1. Modify `path.sh` with your path of Kaldi and srilm.
+1. Modify `path.sh` with your path of Kaldi.
 2. Modify `config.sh` with your feature path and timit path.
 3. Run `$ bash preprocess.sh`
 
@@ -49,9 +49,9 @@ This method developed a GAN-based model to achieve unsupervised phoneme recognit
 
 `epoch` : number of training epoch.
 
-`kl_saturate` : type of phoneme sequences (oracle/fake).
+`kl_saturate` : parameter of kl-annealing.
 
-`kl_step` : type of phoneme sequences (oracle/fake).
+`kl_step` : parameter of kl-annealing, which means how many step of KL-weight from 0 to 1.
 
 `cuda_id` : GPU ids.
 
