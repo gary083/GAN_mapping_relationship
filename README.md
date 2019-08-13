@@ -20,7 +20,7 @@ This method developed a GAN-based model to achieve unsupervised phoneme recognit
 2. Modify `config.sh` with your feature path and timit path.
 3. Run `$ bash preprocess.sh`
 
-- Phoneme sequences can download from [here](https://www.dropbox.com/s/rux7tnr0n6k6n33/phn_seq.tar.gz?dl=0), and put `target.39` and `oracle.39` in `./data`.
+- Phoneme sequences can download from [here](https://www.dropbox.com/s/rux7tnr0n6k6n33/phn_seq.tar.gz?dl=0), and put `fake.39` and `oracle.39` in `./data`.
 
 ### Train model
 - Usage:
