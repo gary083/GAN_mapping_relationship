@@ -29,7 +29,7 @@ This method developed a GAN-based model to achieve unsupervised phoneme recognit
 2. Modify the model's parameter in `src/audio2vec.sh` and `src/mapping.sh`.
 2. Run `$ bash run.sh`
 
-- This scipt contains the training flow of whole system.
+- This scipt contains the training flow of the whole system.
 
 ## Hyperparameters in `config.sh`
 `cluster_num` : number of cluster.
